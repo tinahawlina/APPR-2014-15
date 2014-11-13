@@ -7,11 +7,12 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2014/15.
 ## Tematika
 
 Za temo projekta pri predmetu APPR sem si izbrala plavanje, oziroma natančneje rekorde, ki so bili osvojeni tako na dolgi(olimpijski bazen-50m) in kratki progi(25m). Ker se tekmuje v različnih dolžinah in različnih slogih, bom analizirala naslednje:
+
 Slogi(na 50m,100m in 200m):
-1.) prosto
-2.) hrbtno
-3.) prsno
-4.) delfin
+- prosto
+- hrbtno
+- prsno
+- delfin
 
 Podatke bom primerjala po naslednjih spremenljivkah:
 urejenostne: proga, spol, slogi, dolžina

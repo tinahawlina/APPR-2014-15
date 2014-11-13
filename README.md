@@ -25,7 +25,7 @@ Cilji naloge:
 - če tekmuje več moških ali žensk
 - kje, v kateri državi je bilo postavljenih največ rekordov
 
-Navajam še dostop do podatkov(iz spletne strani Wikipedia):
+Navajam še dostop do podatkov(iz spletne strani Wikipedia),
 http://en.wikipedia.org/wiki/List_of_world_records_in_swimming
 
 

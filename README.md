@@ -16,8 +16,8 @@ Slogi(na 50m,100m in 200m):
 
 Podatke bom primerjala po naslednjih spremenljivkah:
 - urejenostne: proga, spol, slogi, dolžina
-- številski: čas, datum postavitve rekorda
-- imenske: državljanstvo postavljalca rekorda, na katerem prvenstvu/olimpijskih igrah je bil rekord postavljen
+- številska: čas
+- imenske: državljanstvo postavljalca rekorda, na katerem prvenstvu/olimpijskih igrah je bil rekord postavljen, datum postavitve rekorda
 
 Cilji naloge:
 - med seboj primerjati rekorde v različnih slogih; tako vidimo kateri izmed slogov je najlažji/najtežji

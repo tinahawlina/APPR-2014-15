@@ -15,6 +15,7 @@ Torej sem končno dobila idejo za temo plavanje. Za to temo sem se odločila pre
 Podatke o doseženih rekordih v plavanju sem pridobila s spletne strani Wikipedia, navajam link:
 
 http://en.wikipedia.org/wiki/List_of_world_records_in_swimming
+
 http://www.fina.org/H2O/index.php?option=com_content&view=article&id=1271&Itemid=200
 
 Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tudi v dveh različnih bazenih-dolžine 50 in 25m, pri čemer daljšemu pravimo olimpijski bazen, kot ste verjetno že vsi slišali. Jaz sem se odločila za analizo rekordov doseženih na dolžinah 50, 100 in 200m, tako na daljšem kot krajšem bazenu v osnovnih štirih tehnikah:

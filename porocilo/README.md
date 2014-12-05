@@ -16,8 +16,6 @@ Podatke o doseženih rekordih v plavanju sem pridobila s spletne strani Wikipedi
 
 http://en.wikipedia.org/wiki/List_of_world_records_in_swimming
 
-http://www.fina.org/H2O/index.php?option=com_content&view=article&id=1271&Itemid=200
-
 Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tudi v dveh različnih bazenih-dolžine 50 in 25m, pri čemer daljšemu pravimo olimpijski bazen, kot ste verjetno že vsi slišali. Jaz sem se odločila za analizo rekordov doseženih na olimpijskem bazenu pri plavanju na 100 m  v osnovnih štirih tehnikah:
 - prosto
 - prsno

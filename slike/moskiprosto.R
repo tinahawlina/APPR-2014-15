@@ -1,2 +1,1 @@
-plot(moskiprosto[,3], main="Moški prosto: rekorderji po državah", pch=30, 
-     col="darkseagreen2",legend =c('Država','Število rekorderjev'))
+plot(moskiprosto[,3], main="Moški prosto: rekorderji po državah",ylab="rekorderji po državah",col="darkseagreen2",las=2)

@@ -1,1 +1,3 @@
-plot(moskiprosto[,3], main="Moški prosto: rekorderji po državah",ylab="rekorderji po državah",col="darkseagreen2",las=2)
+plot(moskiprosto[,3], main="Moški prosto: rekorderji po državah",
+     ylab="rekorderji po državah",col="darkseagreen2",las=2)
+

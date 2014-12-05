@@ -7,6 +7,8 @@ source("slike/moskiprsno.R", encoding="UTF-8")
 source("slike/zenskeprsno.R", encoding="UTF-8")
 source("slike/moskidelfin.R", encoding="UTF-8")
 source("slike/zenskedelfin.R", encoding="UTF-8")
+source("slike/moskiprosto.R", encoding="UTF-8")
+source("slike/zenskeprosto.R", encoding="UTF-8")
 
 # 3. faza: Analiza in vizualizacija podatkov
 #source("vizualizacija/vizualizacija.r")

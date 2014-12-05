@@ -63,13 +63,29 @@ Glavni cilj je narediti dobro statistično analizo in primerjati podatke tako, d
 
 \section{Obdelava, uvoz in čiščenje podatkov}
 
-V drugi fazi projekta je bilo potrebno podatke uvoziti, jih prečistiti in narediti za tabele pripadajoče grafe. Sam uvoz prek csv-ja mi ni delal večjih težav, saj je proces pridobivanja podatkov v tabelo dokaj lahek. Malo več dela sem imela, ko sem želela te tabele uvoziti kar direktno iz spletne strani(z uporabo XML). Nujno je seveda napisati funkcijo, ki bo tabelo zgenerirala, tu pa so se meni, ker r-ja še ne poznam dodobra, pojavili prvi problemi. To sem uspešno rešila in pričela z risanjem grafov. 
+V drugi fazi projekta je bilo potrebno podatke uvoziti, jih prečistiti in narediti za tabele pripadajoče grafe. Najprej sem omejila svoje podatke, saj sem si na začetku na voljo dala preveč tabel, tako da sem sedaj spremenila poročilo od zadnje oddaje.
 
-Prva dva tortna diagrama sta si zelo podobna in dokaj enostavna, saj primerjam samo podatek, kolikokrat je rekorder postavil rekord. Prvi je narejen za moške, drugi pa za ženske. Z generiranjem teh dveh pit nisem imela težav. 
+Nato pa sem se lotila uvoza podatkov. Sam uvoz prek csv-ja mi ni delal večjih težav, saj je proces pridobivanja podatkov v tabelo dokaj lahek. Malo več dela sem imela, ko sem želela te tabele uvoziti kar direktno iz spletne strani(z uporabo XML). Nujno je seveda napisati funkcijo, ki bo tabelo zgenerirala, tu pa so se meni, ker r-ja še ne poznam dodobra, pojavili prvi problemi. To sem uspešno rešila in pričela z risanjem grafov. Vedno sem naredila po dva podobna grafa, enega za moške in drugega za ženske.
 
-\includegraphics{../slike/moskihrbtno.pdf}
+Prva dva tortna diagrama sta si zelo podobna in dokaj enostavna, saj primerjam samo podatek, kolikokrat je rekorder postavil rekord v tehniki hrbtno. 
 
-\includegraphics{../slike/zenskehrbtno.pdf}
+\includegraphics[width=\textwidth]{../slike/moskihrbtno.pdf}
+
+\includegraphics[width=\textwidth]{../slike/zenskehrbtno.pdf}
+
+Za druga dva grafa sem podobno naredila pite, le da sem tokrat med seboj primerjala državljanstvo tistih, ki so rekord dosegli. Katera država se lahko ponaša z največ rekordi v tehniki hrbtno. Grafa sem spet naredila za moške in ženske.
+
+\includegraphics[width=\textwidth]{../slike/moskiprsno.pdf}
+
+\includegraphics[width=\textwidth]{../slike/zenskehrbtno.pdf}
+
+Pri naslednjem paru sem spet naredila dve piti, primerjala pa sem po državah, v katerih so bili rekordi, v tehniki prsno, doseženi.
+
+\includegraphics[width=\textwidth]{../slike/moskidelfin.pdf}
+
+\includegraphics[width=\textwidth]{../slike/zenskedelfin.pdf}
+
+Vsi ti tortni diagrami so dokaj enostavni, zato z njihovo izdelavo nisem imela večjih težav.
 
 \end{document}
 

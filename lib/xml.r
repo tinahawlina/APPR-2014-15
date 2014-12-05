@@ -51,8 +51,5 @@ uvozi.moskiprosto <- function() {
   # Podatke iz matrike spravimo v razpredelnico
   return(data.frame(Time = sapply(matrika[,"Time"], cas.v.sekunde),
                     matrika[,4:8]))
+  
 }
-
-
-
-

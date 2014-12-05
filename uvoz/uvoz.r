@@ -1,5 +1,7 @@
 # 2. faza: Uvoz podatkov
 
+source("lib/xml.r")
+
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozimoskihrbtno <- function() {
   return(read.csv2("podatki/moskihrbtno.csv", sep = ";",
@@ -52,6 +54,11 @@ uvozimoskidelfin <- function() {
 # Zapišimo podatke v razpredelnico druzine.
 cat("Uvažam podatke o rekordih moski, 100 m, delfin ...\n")
 moskidelfin <- uvozimoskidelfin()
+
+
+moskiprosto <- uvozi.moskiprosto()
+
+zenskeprosto <- uvozi.zenskeprosto()
 
 # Če bi imeli več funkcij za uvoz in nekaterih npr. še ne bi
 # potrebovali v 3. fazi, bi bilo smiselno funkcije dati v svojo

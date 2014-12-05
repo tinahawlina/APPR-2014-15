@@ -1,5 +1,23 @@
+# Uvoz s spletne strani
+
 library(XML)
 
+# Pretvori čas [oblika (m:)ss(.d(c))] v število sekund
+cas.v.sekunde <- function(x) {
+  parts <- as.numeric(unlist(strsplit(gsub("(\\.[0-9])$", "\\10",
+                                           as.character(x)), "[:.]")))
+  secs <- c(60, 1, 0.01)
+  return(sum(parts * secs[(4-length(parts)):3]))
+}
+
+# Vrne vektor nizov z odstranjenimi začetnimi "prazninami" (whitespace)
+# in iz vozlišč, ki ustrezajo podani poti. 
+stripByPath <- function(x, path) {
+  unlist(xpathApply(x, path,
+                    function(y) gsub("^\\s*(.*?)\\s*$", "\\1",
+                                     gsub("^(.*?)\\[.*$", "\\1",
+                                          xmlValue(y)))))
+} 
 
 uvozi.moskiprosto <- function() {
   url.moskiprosto <- "http://en.wikipedia.org/wiki/World_record_progression_100_metres_freestyle"
@@ -33,5 +51,8 @@ uvozi.moskiprosto <- function() {
   # Podatke iz matrike spravimo v razpredelnico
   return(data.frame(Time = sapply(matrika[,"Time"], cas.v.sekunde),
                     matrika[,4:8]))
-  
 }
+
+
+
+

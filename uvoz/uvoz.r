@@ -55,9 +55,20 @@ uvozimoskidelfin <- function() {
 cat("Uvažam podatke o rekordih moski, 100 m, delfin ...\n")
 moskidelfin <- uvozimoskidelfin()
 
+# Funkcija, ki uvozi podatke iz datoteke druzine.csv
+uvozizenskedelfin <- function() {
+  return(read.csv2("podatki/zenskedelfin.csv", sep = ";",
+                   fileEncoding = "Windows-1250"
+  ))
+}
+# Zapišimo podatke v razpredelnico druzine.
+cat("Uvažam podatke o rekordih zenske, 100 m, delfin ...\n")
+zenskedelfin <- uvozizenskedelfin()
 
+cat("Uvažam podatke o rekordih moski, 100 m, prosto ...\n")
 moskiprosto <- uvozi.moskiprosto()
 
+cat("Uvažam podatke o rekordih zenske, 100 m, prosto ...\n")
 zenskeprosto <- uvozi.zenskeprosto()
 
 # Če bi imeli več funkcij za uvoz in nekaterih npr. še ne bi

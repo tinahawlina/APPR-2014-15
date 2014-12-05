@@ -1,35 +1,21 @@
-\documentclass[10pt]{article}
-\usepackage[slovene,english]{babel}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage[utf8]{inputenc}%omogoča čšćžđ
-\usepackage[usenames]{color}
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[slovene]{babel}
+\usepackage[utf8x]{inputenc}
 \usepackage{graphicx}
-\usepackage{lmodern}
-\usepackage[
-    paper=a4paper,
-    textwidth=15cm,
-    textheight=24cm,
-    ]{geometry}
-\usepackage{fancybox}
+\usepackage{enumerate}
 \usepackage{url}
-\usepackage{epstopdf}
-\usepackage{fancyhdr}
-\usepackage{eurosym}
 
-
-
-\date{\today}
-\title{Plavanje-rekordi}
-\author{Tina Hawlina}
+\pagestyle{plain}
 
 \begin{document}
-\selectlanguage{slovene}
+\title{Poročilo pri predmetu \\
+Analiza podatkov s programom R}
+\author{Tina Hawlina}
 \maketitle
 
-\section{Poročilo}
+\section{Izbira teme}
 
-\subsection{Izbira tematike}
 
 Pri predmetu APPR sem si za temo svojega projekta izbrala plavanje. Izbira teme ni bila preprosta, saj je na internetu na voljo neskončno podatkov, ki bi jih lahko obdelalali. Najprej sem želela izbrati temo globalnega segrevanja ozračja (le za Ameriko), vendar sem ugotovila, da bi bilo verjetno pretežko analizirati toliko podatkov za vsako zvezno državo posebej (temperatura, padavine, snežne padavine, vlažnost, ekstremne vremenske razmere itd.) in jih dobiti v želenih oblikah (.csv, .xsl, .html). Poleg tega so podatki podani po vremenskih postajah, tako da bi bilo potrebno ugotoviti še kje se posamezna postaja nahaja.
 
@@ -40,12 +26,12 @@ Torej sem končno dobila idejo za temo plavanje. Za to temo sem se odločila pre
 
 \subsection{Analiziranje podatkov}
 
-Podatke o doseženih rekordih v plavanju sem pridobila s spletne strani Wikipediain s strani FINA, navajam linka:
-\begin{verbatim}
-http://en.wikipedia.org/wiki/List_of_world_records_in_swimming
-http://www.fina.org/H2O/index.php?option=com_content&view=article&id=1271&Itemid=200
-\end{verbatim}
-Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tudi v dveh različnih bazenih-dolžine 50 in 25m, pri čemer daljšemu pravimo olimpijski bazen, kot ste verjetno že vsi slišali. Jaz sem se odločila za analizo rekordov doseženih na dolžinah 50, 100 in 200m, tako na daljšem kot krajšem bazenu v osnovnih štirih tehnikah:
+Podatke o doseženih rekordih v plavanju sem pridobila s spletne strani wikipedia:
+\begin{enumerate}
+\item \url http://en.wikipedia.org/wiki/List_of_world_records_in_swimming
+\end{enumerate}
+Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tudi v dveh različnih bazenih-dolžine 50 in 25m, pri čemer daljšemu pravimo olimpijski bazen, kot ste verjetno že vsi slišali. Jaz sem se odločila za analizo rekordov doseženih na olimpijskem bazenu pri plavanju na 100 m  v osnovnih štirih tehnikah:
+
 \begin{enumerate}
 \item prosto
 \item prsno
@@ -54,8 +40,9 @@ Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tud
 \end{enumerate}
 
 Tako sem si zagotovila, da bo podatkov čimveč, kar je za statistiko pomembno, saj potrebujemo čimvečji vzorec in spet ne preveč, da analiza ne bo pretežavna in da bo računalnik zmogel podatke hitro sprocesirati. Na voljo imam tudi dovolj spremenljivk, vseh treh tipov:
+
 \begin{itemize}
-\item urejenostne: proga (50m, 100m, 200m), spol, slogi, dolžina bazena (50m, 25m)
+\item urejenostne: spol, slogi
 \item številska: čas
 \item imenske: državljanstvo postavljalca rekorda, na katerem prvenstvu/olimpijskih igrah je bil rekord postavljen, datum postavitve rekorda
 \end{itemize}
@@ -73,9 +60,18 @@ Glavni cilj je narediti dobro statistično analizo in primerjati podatke tako, d
 \item kje, v kateri državi je bilo postavljenih največ rekordov
 \end{itemize}
 
-\end{document}
 
-%\section{Obdelava, uvoz in čiščenje podatkov}
+\section{Obdelava, uvoz in čiščenje podatkov}
+
+V drugi fazi projekta je bilo potrebno podatke uvoziti, jih prečistiti in narediti za tabele pripadajoče grafe. Sam uvoz prek csv-ja mi ni delal večjih težav, saj je proces pridobivanja podatkov v tabelo dokaj lahek. Malo več dela sem imela, ko sem želela te tabele uvoziti kar direktno iz spletne strani(z uporabo XML). Nujno je seveda napisati funkcijo, ki bo tabelo zgenerirala, tu pa so se meni, ker r-ja še ne poznam dodobra, pojavili prvi problemi. To sem uspešno rešila in pričela z risanjem grafov. 
+
+Prva dva tortna diagrama sta si zelo podobna in dokaj enostavna, saj primerjam samo podatek, kolikokrat je rekorder postavil rekord. Prvi je narejen za moške, drugi pa za ženske. Z generiranjem teh dveh pit nisem imela težav. 
+
+\includegraphics{../slike/moskihrbtno.pdf}
+
+\includegraphics{../slike/zenskehrbtno.pdf}
+
+\end{document}
 
 %\section{Analiza in vizualizacija podatkov}
 

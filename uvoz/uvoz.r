@@ -2,11 +2,13 @@
 
 source("lib/xml.r")
 
+
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozimoskihrbtno <- function() {
-  return(read.csv2("podatki/moskihrbtno.csv", sep = ";",
-                   fileEncoding = "Windows-1250"
-  ))
+  mh <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+                 fileEncoding = "Windows-1250")
+  mh$Čas <- sapply(mh$Čas, cas.v.sekunde)
+  return(mh)
 }
 
 # Zapišimo podatke v razpredelnico druzine.
@@ -17,9 +19,10 @@ moskihrbtno <- uvozimoskihrbtno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozizenskehrbtno <- function() {
-  return(read.csv2("podatki/zenskehrbtno.csv", sep = ";",
-                   fileEncoding = "Windows-1250"
-  ))
+  zh <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+                  fileEncoding = "Windows-1250")
+  zh$Čas <- sapply(zh$Čas, cas.v.sekunde)
+  return(zh)
 }
 # Zapišimo podatke v razpredelnico druzine.
 cat("Uvažam podatke o rekordih zenske, 100 m, hrbtno ...\n")
@@ -27,9 +30,10 @@ zenskehrbtno <- uvozizenskehrbtno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozimoskiprsno <- function() {
-  return(read.csv2("podatki/moskiprsno.csv", sep = ";",
-                   fileEncoding = "Windows-1250"
-  ))
+  mp <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+                  fileEncoding = "Windows-1250")
+  mp$Čas <- sapply(mp$Čas, cas.v.sekunde)
+  return(mp)
 }
 # Zapišimo podatke v razpredelnico druzine.
 cat("Uvažam podatke o rekordih moski, 100 m, prsno ...\n")
@@ -37,9 +41,10 @@ moskiprsno <- uvozimoskiprsno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozizenskeprsno <- function() {
-  return(read.csv2("podatki/zenskeprsno.csv", sep = ";",
-                   fileEncoding = "Windows-1250"
-  ))
+  zp <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+                  fileEncoding = "Windows-1250")
+  zp$Čas <- sapply(zp$Čas, cas.v.sekunde)
+  return(zp)
 }
 # Zapišimo podatke v razpredelnico druzine.
 cat("Uvažam podatke o rekordih zenske, 100 m, prsno ...\n")
@@ -47,9 +52,10 @@ zenskeprsno <- uvozizenskeprsno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozimoskidelfin <- function() {
-  return(read.csv2("podatki/moskidelfin.csv", sep = ";",
-                   fileEncoding = "Windows-1250"
-  ))
+  md <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+                  fileEncoding = "Windows-1250")
+  md$Čas <- sapply(md$Čas, cas.v.sekunde)
+  return(md)
 }
 # Zapišimo podatke v razpredelnico druzine.
 cat("Uvažam podatke o rekordih moski, 100 m, delfin ...\n")
@@ -57,9 +63,10 @@ moskidelfin <- uvozimoskidelfin()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozizenskedelfin <- function() {
-  return(read.csv2("podatki/zenskedelfin.csv", sep = ";",
-                   fileEncoding = "Windows-1250"
-  ))
+  zd <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+                  fileEncoding = "Windows-1250")
+  zd$Čas <- sapply(zd$Čas, cas.v.sekunde)
+  return(zd)
 }
 # Zapišimo podatke v razpredelnico druzine.
 cat("Uvažam podatke o rekordih zenske, 100 m, delfin ...\n")

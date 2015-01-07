@@ -16,9 +16,7 @@ Podatke o doseženih rekordih v plavanju sem pridobila s spletne strani Wikipedi
 
 http://en.wikipedia.org/wiki/List_of_world_records_in_swimming
 
-http://www.fina.org/H2O/index.php?option=com_content&view=article&id=1271&Itemid=200
-
-Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tudi v dveh različnih bazenih-dolžine 50 in 25m, pri čemer daljšemu pravimo olimpijski bazen, kot ste verjetno že vsi slišali. Jaz sem se odločila za analizo rekordov doseženih na dolžinah 50, 100 in 200m, tako na daljšem kot krajšem bazenu v osnovnih štirih tehnikah:
+Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tudi v dveh različnih bazenih-dolžine 50 in 25m, pri čemer daljšemu pravimo olimpijski bazen, kot ste verjetno že vsi slišali. Jaz sem se odločila za analizo rekordov doseženih na olimpijskem bazenu pri plavanju na 100 m  v osnovnih štirih tehnikah:
 - prosto
 - prsno
 - hrbtno
@@ -26,7 +24,7 @@ Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tud
 
 Tako sem si zagotovila, da bo podatkov čimveč, kar je za statistiko pomembno, saj potrebujemo čimvečji vzorec in spet ne preveč, da analiza ne bo pretežavna in da bo računalnik zmogel podatke hitro sprocesirati. Na voljo imam tudi dovolj spremenljivk, vseh treh tipov:
 
-- urejenostne: proga (50m, 100m, 200m), spol, slogi, dolžina bazena (50m, 25m)
+- urejenostne: spol, slogi
 - številska: čas
 - imenske: državljanstvo postavljalca rekorda, na katerem prvenstvu/olimpijskih igrah je bil rekord postavljen, datum postavitve rekorda
 

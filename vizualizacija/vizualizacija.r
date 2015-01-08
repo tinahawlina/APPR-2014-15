@@ -58,7 +58,7 @@ pdf("slike/moskidelfin_svet.pdf")
 
 moskidelfin$Drzava.prvenstva <- gsub(".*, ", "", moskidelfin$Kraj.prvenstva)
 moskidelfin$Drzava.prvenstva[grep("Germany", moskidelfin$Drzava.prvenstva)] <- "Germany"
-moskidelfin$Drzava.prvenstva[grep("USSR", moskidelfin$Drzava.prvenstva)] <- "Russia"
+moskidelfin$Drzava.prvenstva[grep("USSR", moskidelfin$Drzava.prvenstva)] <- "Russian Federation"
 moskidelfin$Drzava.prvenstva[grep("USA", moskidelfin$Drzava.prvenstva)] <- "United States"
 
 kraj_prv <- table(moskidelfin$Drzava.prvenstva)

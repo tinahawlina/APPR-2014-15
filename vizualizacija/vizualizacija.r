@@ -33,6 +33,8 @@ preuredi <- function(podatki, zemljevid) {
 cat("Rišem zemljevid...\n")
 pdf("slike/moskiprosto_svet.pdf")
 
+moskiprosto$Nationality <- as.character(moskiprosto$Nationality)
+moskiprosto$Nationality[moskiprosto$Nationality == "Russia"] <- "Russian Federation"
 
 drzavljanstvo <- table(moskiprosto$Nationality)
 rekordi <- unique(drzavljanstvo)

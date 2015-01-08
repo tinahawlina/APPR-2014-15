@@ -34,7 +34,6 @@ cat("Rišem zemljevid...\n")
 pdf("slike/moskiprosto_svet.pdf")
 
 
-
 drzavljanstvo <- table(moskiprosto$Nationality)
 rekordi <- unique(drzavljanstvo)
 rekordi <- rekordi[order(rekordi)]

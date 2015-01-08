@@ -14,10 +14,11 @@ cas.v.sekunde <- function(x) {
 # in iz vozlišč, ki ustrezajo podani poti. 
 stripByPath <- function(x, path) {
   unlist(xpathApply(x, path,
-                    function(y) gsub("^\\s*(.*?)\\s*$", "\\1",
-                                     gsub("^(.*?)\\[.*$", "\\1",
-                                          xmlValue(y)))))
-} 
+                    function(y) gsub("[^A-Za-z0-9, ]", "",
+                                     gsub("^\\s*(.*?)\\s*$", "\\1",
+                                          gsub("^(.*?)\\[.*$", "\\1",
+                                               xmlValue(y))))))
+}
 
 uvozi.moskiprosto <- function() {
   url.moskiprosto <- "http://en.wikipedia.org/wiki/World_record_progression_100_metres_freestyle"

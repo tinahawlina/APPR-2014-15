@@ -74,23 +74,3 @@ mesta <- data.frame("long" = c(-77.03, 144.96, 116.40, 139.69,-73.56, 12.37,37.6
 points(coordinates(mesta[c("long", "lat")]), col="black", cex=0.7, pch=15)
 dev.off()
 
-# gsub(", .*", "", moskiprsno$Kraj.prvenstva)
-
-# 
-# # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
-# druzine <- preuredi(druzine, obcine)
-# 
-# # Izračunamo povprečno velikost družine.
-# druzine$povprecje <- apply(druzine[1:4], 1, function(x) sum(x*(1:4))/sum(x))
-# min.povprecje <- min(druzine$povprecje, na.rm=TRUE)
-# max.povprecje <- max(druzine$povprecje, na.rm=TRUE)
-# 
-# # Narišimo zemljevid v PDF.
-# cat("Rišem zemljevid...\n")
-# pdf("slike/povprecna_druzina.pdf", width=6, height=4)
-# 
-# n = 100
-# barve = topo.colors(n)[1+(n-1)*(druzine$povprecje-min.povprecje)/(max.povprecje-min.povprecje)]
-# plot(obcine, col = barve)
-# 
-# dev.off()

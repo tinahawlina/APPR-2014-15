@@ -26,14 +26,6 @@ Torej sem končno dobila idejo za temo plavanje. Za to temo sem se odločila pre
 
 \subsection{Analiziranje podatkov}
 
-
-Podatke o doseženih rekordih v plavanju sem pridobila s spletne strani Wikipedia, navajam link:
-
-\url {http://en.wikipedia.org/wiki/List_of_world_records_in_swimming}
-
-
-Ker se pri plavanju tekmuje v različnih slogih, dolžinah, plavamo pa lahko tudi v dveh različnih bazenih-dolžine 50 in 25m, pri čemer daljšemu pravimo olimpijski bazen, kot ste verjetno že vsi slišali. Jaz sem se odločila za analizo rekordov doseženih na dolžinah 50, 100 in 200m, tako na daljšem kot krajšem bazenu v osnovnih štirih tehnikah:
-
 Podatke o doseženih rekordih v plavanju sem pridobila s spletne strani wikipedia:
 
 \url {http://en.wikipedia.org/wiki/List_of_world_records_in_swimming}
@@ -60,6 +52,7 @@ Tako sem si zagotovila, da bo podatkov čimveč, kar je za statistiko pomembno, 
 
 
 Glavni cilj je narediti dobro statistično analizo in primerjati podatke tako, da lahko iz njih preberemo karkoli nas zanima in to na uporabniku prijazen način, z grafi, diagrami in podobno, tako da mu ni treba iskati željenega podatka v tabelah. Ostale primerjave po spremenljivkah, ki bi jih rada naredila:
+
 \begin{itemize}
 \item med seboj primerjati rekorde v različnih slogih; tako vidimo kateri izmed slogov je najlažji/najtežji
 \item ugotoviti, ali so rekordi večinoma postavljeni v olimpijskem bazenu ali bazenu dolžine 25m (pri bazenu 25m na koncu naredimo obrat, pri vsaki tehniki drugačen, pri čemer pridobimo hitrost-odriv od stene)
@@ -78,9 +71,11 @@ Nato pa sem se lotila uvoza podatkov. Sam uvoz prek csv-ja mi ni delal večjih t
 
 Prva dva tortna diagrama sta si zelo podobna in dokaj enostavna, saj primerjam samo podatek, kolikokrat je rekorder postavil rekord v tehniki hrbtno. 
 
+
 \includegraphics[width=\textwidth]{../slike/moskihrbtno.pdf}
 
 \includegraphics[width=\textwidth]{../slike/zenskehrbtno.pdf}
+
 
 Za druga dva grafa sem podobno naredila pite, le da sem tokrat med seboj primerjala kraj kjer so bili rekordi največkrat doseženi. Katera država se lahko ponaša z največ rekordi v tehniki prsno. Grafa sem spet naredila za moške in ženske. Pri tem sem se še malo poigrala z barvami in spremenila zastarela imena držav, npr. Sovjetska Unija, Vzhodna/Zahodna Nemčija itd.
 
@@ -88,32 +83,36 @@ Za druga dva grafa sem podobno naredila pite, le da sem tokrat med seboj primerj
 
 \includegraphics[width=\textwidth]{../slike/zenskeprsno.pdf}
 
-Za tretji par grafov sem naredila enako kot pri tehniki hrbtno, pogledala sem, v kateri državi je bilo postavljenih največ rekordov. 
 
 \includegraphics[width=\textwidth]{../slike/moskidelfin.pdf}
+
+Za tretji par grafov sem naredila enako kot pri tehniki hrbtno, pogledala sem, v kateri državi je bilo postavljenih največ rekordov v tehniki delfin. 
 
 \includegraphics[width=\textwidth]{../slike/zenskedelfin.pdf}
 
 Vsi ti tortni diagrami so dokaj enostavni, zato z njihovo izdelavo nisem imela večjih težav.
 
-Za zadnji dve tabeli sem naredila stolpična diagrama. Moške sem uredila tako, da sem gledala, koliko rekordov je pripadlo posamezni državi.
-
 \includegraphics[width=\textwidth]{../slike/moskiprosto.pdf}
 
-Ženske pa sem uredila glede na to, kolikokrat je posamezna oseba postavila rekord.
+Za zadnji dve tabeli sem naredila stolpična diagrama. Moške sem uredila tako, da sem gledala, koliko rekordov je pripadlo posamezni državi.
 
 \includegraphics[width=\textwidth]{../slike/zenskeprosto.pdf}
 
-
+Ženske pa sem uredila glede na to, kolikokrat je posamezna oseba postavila rekord.
 \section{Analiza in vizualizacija podatkov}
 
 V tretji fazi sem prikazala podatke na zemljevidu. Najprej je bilo potrebno uvoziti zemljevid, ker sem potrebovala zemljevid sveta, sem ga uvozila iz spletne strani naturalearthdata. Nato sem pričela z risanjem zemljevidov. Naredila sem dva zemljevida, za rekorde postavljene v prostem slogu, za moške, in še enega prav tako za moške vendar v slogu delfin. 
 
-\includegraphics[width=\textwidth]{../slike/moskiprosto_svet.pdf}
+\makebox[\textwidth][c]{
+\includegraphics[height=0.7\textheight]{../slike/moskiprosto_svet.pdf}
+}
+
 
 Pri prvem zemljevidu sem med seboj primerjala postavljalce rekordov po državljanstvu. Na zemljevidu se lepo vidi, da jih največ prihaja iz Združenih držav Amerike, nekaj iz Avstralije in Francije, ostale države v naboru pa so le manjšinjsko določene. S krogci sem zaradi preglednosti prikazala še glavna mesta najbolj zastopanih držav, to so Washington, Canberra, Pariz in Brasilia. Nekaj problemov sem imela z Rusijo, saj je ta v zemljevidu shranjena kot Russian Federation in sem potrebovala kar nekaj časa, da sem to ugotovila in kasneje spremenila. 
 
-\includegraphics[width=\textwidth]{../slike/moskidelfin_svet.pdf}
+\makebox[\textwidth][c]{
+\includegraphics[height=0.7\textheight]{../slike/moskidelfin_svet.pdf}
+}
 
 Pri drugem zemljevidu pa sem med seboj primerjala države gostiteljice, oziroma kje so se prvenstva največkrat odvijala. S kvadratki sem tudi prikazala nekatera od teh mest, to so: Washington, Melbourne, Beijing,Tokyo, Montreal, Leipzig in Moskva. 
 

@@ -63,7 +63,7 @@ moskidelfin <- uvozimoskidelfin()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozizenskedelfin <- function() {
-  zd <- read.csv2("podatki/zenskehrbtno.csv", sep = ";",
+  zd <- read.csv2("podatki/zenskedelfin.csv", sep = ";",
                   fileEncoding = "Windows-1250")
   zd$Čas <- sapply(zd$Čas, cas.v.sekunde)
   return(zd)

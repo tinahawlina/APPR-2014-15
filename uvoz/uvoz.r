@@ -19,7 +19,7 @@ moskihrbtno <- uvozimoskihrbtno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozizenskehrbtno <- function() {
-  zh <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+  zh <- read.csv2("podatki/zenskehrbtno.csv", sep = ";",
                   fileEncoding = "Windows-1250")
   zh$Čas <- sapply(zh$Čas, cas.v.sekunde)
   return(zh)
@@ -30,7 +30,7 @@ zenskehrbtno <- uvozizenskehrbtno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozimoskiprsno <- function() {
-  mp <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+  mp <- read.csv2("podatki/moskiprsno.csv", sep = ";",
                   fileEncoding = "Windows-1250")
   mp$Čas <- sapply(mp$Čas, cas.v.sekunde)
   return(mp)
@@ -41,7 +41,7 @@ moskiprsno <- uvozimoskiprsno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozizenskeprsno <- function() {
-  zp <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+  zp <- read.csv2("podatki/zenskeprsno.csv", sep = ";",
                   fileEncoding = "Windows-1250")
   zp$Čas <- sapply(zp$Čas, cas.v.sekunde)
   return(zp)
@@ -52,7 +52,7 @@ zenskeprsno <- uvozizenskeprsno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozimoskidelfin <- function() {
-  md <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+  md <- read.csv2("podatki/moskidelfin.csv", sep = ";",
                   fileEncoding = "Windows-1250")
   md$Čas <- sapply(md$Čas, cas.v.sekunde)
   return(md)
@@ -63,7 +63,7 @@ moskidelfin <- uvozimoskidelfin()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozizenskedelfin <- function() {
-  zd <- read.csv2("podatki/moskihrbtno.csv", sep = ";",
+  zd <- read.csv2("podatki/zenskehrbtno.csv", sep = ";",
                   fileEncoding = "Windows-1250")
   zd$Čas <- sapply(zd$Čas, cas.v.sekunde)
   return(zd)

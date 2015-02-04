@@ -90,37 +90,4 @@ uvozi.zenskeprosto <- function() {
   
 }
 
-uvozi.zenskehrbtno <- function() {
-  url.zenskehrbtno <- "http://en.wikipedia.org/wiki/World_record_progression_100_metres_freestyle"
-  doc.zenskehrbtno <- htmlTreeParse(url.zenskehrbtno, useInternalNodes=TRUE)
-  
-  # Pobrišemo nevidno vsebino
-  for (t in getNodeSet(doc.zenskehrbtno, "//span[@style='display:none']|//span[@class='sortkey']")) {
-    xmlValue(t) <- ""
-  } 
-  
-  # Poiščemo vse tabele v dokumentu
-  tabele <- getNodeSet(doc.zenskehrbtno, "//table")
-  
-  # Iz druge tabele dobimo seznam vrstic (<tr>) neposredno pod
-  # trenutnim vozliščem
-  vrstice <- getNodeSet(tabele[[3]], "./tr")
-  
-  # Seznam vrstic pretvorimo v seznam (znakovnih) vektorjev
-  # s porezanimi vsebinami celic (<td>) neposredno pod trenutnim vozliščem
-  seznam <- lapply(vrstice[2:length(vrstice)], stripByPath, "./td")
-  
-  # Iz seznama vrstic naredimo matriko
-  matrika <- matrix(unlist(seznam), nrow=length(seznam), byrow=TRUE)
-  
-  # Imena stolpcev matrike dobimo iz celic (<th>) glave (prve vrstice) tabele
-  colnames(matrika) <- gsub("\n", " ", stripByPath(vrstice[[1]], ".//th"))
-  
-  # Minuse nadomestimo z NA
-  matrika[matrika == "-"] <- NA
-  
-  # Podatke iz matrike spravimo v razpredelnico
-  return(data.frame(Time = sapply(matrika[,"Time"], cas.v.sekunde),
-                    matrika[,4:8]))
-  
-}
+

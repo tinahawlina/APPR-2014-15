@@ -15,18 +15,8 @@ uvozimoskihrbtno <- function() {
 cat("Uvažam podatke o rekordih na moski, 100 m, hrbtno ...\n")
 moskihrbtno <- uvozimoskihrbtno()
 
-
-
-# Funkcija, ki uvozi podatke iz datoteke druzine.csv
-uvozizenskehrbtno <- function() {
-  zh <- read.csv2("podatki/zenskehrbtno.csv", sep = ";",
-                  fileEncoding = "Windows-1250")
-  zh$Čas <- sapply(zh$Čas, cas.v.sekunde)
-  return(zh)
-}
-# Zapišimo podatke v razpredelnico druzine.
 cat("Uvažam podatke o rekordih zenske, 100 m, hrbtno ...\n")
-zenskehrbtno <- uvozizenskehrbtno()
+zenskehrbtno <- uvozi.zenskehrbtno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozimoskiprsno <- function() {
@@ -77,6 +67,8 @@ moskiprosto <- uvozi.moskiprosto()
 
 cat("Uvažam podatke o rekordih zenske, 100 m, prosto ...\n")
 zenskeprosto <- uvozi.zenskeprosto()
+
+
 
 # Če bi imeli več funkcij za uvoz in nekaterih npr. še ne bi
 # potrebovali v 3. fazi, bi bilo smiselno funkcije dati v svojo

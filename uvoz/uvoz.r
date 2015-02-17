@@ -12,7 +12,7 @@ uvozimoskihrbtno <- function() {
 }
 
 # Zapišimo podatke v razpredelnico druzine.
-cat("Uvažam podatke o rekordih na moski, 100 m, hrbtno ...\n")
+cat("Uvažam podatke o rekordih moski, 100 m, hrbtno ...\n")
 moskihrbtno <- uvozimoskihrbtno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
@@ -24,7 +24,7 @@ uvozizenskehrbtno <- function() {
 }
 
 # Zapišimo podatke v razpredelnico druzine.
-cat("Uvažam podatke o rekordih na zenske, 100 m, hrbtno ...\n")
+cat("Uvažam podatke o rekordih zenske, 100 m, hrbtno ...\n")
 zenskehrbtno <- uvozizenskehrbtno()
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv

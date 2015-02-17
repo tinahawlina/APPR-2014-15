@@ -89,3 +89,5 @@ uvozi.zenskeprosto <- function() {
                     matrika[,4:8]))
   
 }
+
+

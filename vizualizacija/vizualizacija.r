@@ -59,7 +59,6 @@ pdf("slike/moskidelfin_svet.pdf")
 
 moskidelfin$Drzava.prvenstva <- gsub(".*, ", "", moskidelfin$Kraj.prvenstva)
 moskidelfin$Drzava.prvenstva[grep("Germany", moskidelfin$Drzava.prvenstva)] <- "Germany"
-moskidelfin$Drzava.prvenstva[grep("USSR", moskidelfin$Drzava.prvenstva)] <- "Russian Federation"
 moskidelfin$Drzava.prvenstva[grep("USA", moskidelfin$Drzava.prvenstva)] <- "United States"
 
 kraj_prv <- table(moskidelfin$Drzava.prvenstva)
@@ -70,8 +69,9 @@ names(barve) <- names(kraj_prv)
 plot(svet, col = barve[as.character(svet$name_long)])
 title("Rekordi glede na države-gostiteljice prvenstev")
 legend("left", legend = rekordi, fill = rgb(1, 0, 0, (1:length(rekordi))/length(rekordi)), cex = 0.7)
-imena <- c("Washington", "Melbourne", "Beijing","Tokyo", "Montreal", "Leipzig", "Moscow")
-mesta <- data.frame("long" = c(-77.03, 144.96, 116.40, 139.69,-73.56, 12.37,37.61), "lat"= c(38.90, -37.81, 39.90,  35.68, 45.50, 51.33, 55.75))
+imena <- c("Washington", "Melbourne","Tokyo", "Montreal", "Berlin", "Rome", "Barcelona", "Rio de Jainero")
+mesta <- data.frame("long" = c(-77.03, 144.96, 139.69,-73.56, 12.37, 13.40, 12.49, 2.17, -43.17),
+                    "lat"= c(38.90, -37.81, 35.68, 45.50, 51.33, 52.52, 41.90, 41.38, -22.90))
 points(coordinates(mesta[c("long", "lat")]), col="black", cex=0.7, pch=15)
 dev.off()
 

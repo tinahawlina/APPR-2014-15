@@ -19,7 +19,7 @@ moskihrbtno <- uvozimoskihrbtno()
 uvozizenskehrbtno <- function() {
   mh <- read.csv2("podatki/zenskehrbtno.csv", sep = ";",
                   fileEncoding = "Windows-1250")
-  mh$Čas <- sapply(mh$Čas, cas.v.sekunde)
+  mh$Čas <- sapply(mh$Cas, cas.v.sekunde)
   return(mh)
 }
 

@@ -16,14 +16,27 @@ cat("Uvažam podatke iz tabel za ženske in moške v plavanju...\n")
 #      xlab = "Površina (km^2)",
 #      ylab = "Št. naselij")
 # dev.off()
+
 pdf("slike/grafzenske.pdf")
 pdf.options(encoding='ISOLatin2.enc')
-
-Sys.setlocale("LC_TIME", "C") # naj uporablja angleška imena mesecev:
+Sys.setlocale("LC_TIME", "C")
 cas <- zenskedelfin$Čas
 datum <- names(table(zenskedelfin$Datum))
 leto <- gsub(".*, ", "", datum)
 names(leto) <- datum
-plot(as.Date(zenskedelfin$Datum, "%b %d, %Y"), cas, main = "Postavitve rekordov v času", 
-     xlab = "Letnica postavitve rekorda", ylab = "Čas v sekundah", type = "h", lwd = 5, col = "salmon")
+plot(c(as.Date(zenskedelfin$Datum, "%b %d, %Y")), cas,
+     main = "Postavitve rekordov v času", 
+     xlab = "Letnica postavitve rekorda", ylab = "Čas v sekundah", type = "h", lwd = 5, col="violet")
+dev.off()
+
+pdf("slike/grafmoski.pdf")
+pdf.options(encoding='ISOLatin2.enc')
+Sys.setlocale("LC_TIME", "C")
+cas <- moskidelfin$Čas
+datum <- names(table(moskidelfin$Datum))
+leto <- gsub(".*, ", "", datum)
+names(leto) <- datum
+plot(c(as.Date(moskidelfin$Datum, "%b %d, %Y")), cas,
+     main = "Postavitve rekordov v času", 
+     xlab = "Letnica postavitve rekorda", ylab = "Čas v sekundah", type = "h", lwd = 5, col="darkgreen")
 dev.off()

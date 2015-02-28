@@ -55,7 +55,6 @@ Glavni cilj je narediti dobro statistično analizo in primerjati podatke tako, d
 
 \begin{itemize}
 \item med seboj primerjati rekorde v različnih slogih; tako vidimo kateri izmed slogov je najlažji/najtežji
-\item ugotoviti, ali so rekordi večinoma postavljeni v olimpijskem bazenu ali bazenu dolžine 25m (pri bazenu 25m na koncu naredimo obrat, pri vsaki tehniki drugačen, pri čemer pridobimo hitrost-odriv od stene)
 \item primerjati postavljalce rekorda po državljanstvu, oz. katera država ima največ rekorderjev
 \item če so se rekordi tekom časa drastično spremenili(na bolje)
 \item če tekmuje več moških ali žensk
@@ -65,7 +64,7 @@ Glavni cilj je narediti dobro statistično analizo in primerjati podatke tako, d
 
 \section{Obdelava, uvoz in čiščenje podatkov}
 
-V drugi fazi projekta je bilo potrebno podatke uvoziti, jih prečistiti in narediti za tabele pripadajoče grafe. Najprej sem omejila svoje podatke, saj sem si na začetku na voljo dala preveč tabel, tako da sem v tej fazi spremenila poročilo od zadnje oddaje.
+V drugi fazi projekta je bilo potrebno podatke uvoziti, jih prečistiti in narediti za tabele pripadajoče grafe. Najprej sem omejila svoje podatke, saj sem si na začetku na voljo dala preveč tabel.
 
 Nato pa sem se lotila uvoza podatkov. Sam uvoz prek csv-ja mi ni delal večjih težav, saj je proces pridobivanja podatkov v tabelo dokaj lahek. Malo več dela sem imela, ko sem želela te tabele uvoziti kar direktno iz spletne strani(z uporabo XML). Nujno je seveda napisati funkcijo, ki bo tabelo zgenerirala, tu pa so se meni, ker r-ja še ne poznam dodobra, pojavili prvi problemi. To sem uspešno rešila in pričela z risanjem grafov. Vedno sem naredila po dva podobna grafa, enega za moške in drugega za ženske.
 
@@ -77,7 +76,7 @@ Prva dva tortna diagrama sta si zelo podobna in dokaj enostavna, saj primerjam s
 \includegraphics[width=\textwidth]{../slike/zenskehrbtno.pdf}
 
 
-Za druga dva grafa sem podobno naredila pite, le da sem tokrat med seboj primerjala kraj kjer so bili rekordi največkrat doseženi. Katera država se lahko ponaša z največ rekordi v tehniki prsno. Grafa sem spet naredila za moške in ženske. Pri tem sem se še malo poigrala z barvami in spremenila zastarela imena držav, npr. Sovjetska Unija, Vzhodna/Zahodna Nemčija itd.
+Za druga dva grafa sem podobno naredila pite, le da sem tokrat med seboj primerjala kraj, kjer so bili rekordi največkrat doseženi. Katera država se lahko ponaša z največ rekordi v tehniki prsno. Grafa sem spet naredila za moške in ženske. Pri tem sem se še malo poigrala z barvami in spremenila zastarela imena držav, npr. Sovjetska Unija, Vzhodna/Zahodna Nemčija itd.
 
 \includegraphics[width=\textwidth]{../slike/moskiprsno.pdf}
 
@@ -108,7 +107,7 @@ V tretji fazi sem prikazala podatke na zemljevidu. Najprej je bilo potrebno uvoz
 }
 
 
-Pri prvem zemljevidu sem med seboj primerjala postavljalce rekordov po državljanstvu. Na zemljevidu se lepo vidi, da jih največ prihaja iz Združenih držav Amerike, nekaj iz Avstralije in Francije, ostale države v naboru pa so le manjšinjsko določene. S krogci sem zaradi preglednosti prikazala še glavna mesta najbolj zastopanih držav, to so Washington, Canberra, Pariz in Brasilia. Nekaj problemov sem imela z Rusijo, saj je ta v zemljevidu shranjena kot Russian Federation in sem potrebovala kar nekaj časa, da sem to ugotovila in kasneje spremenila. 
+Pri prvem zemljevidu sem med seboj primerjala postavljalce rekordov po državljanstvu. Na zemljevidu se lepo vidi, da jih največ prihaja iz Združenih držav Amerike, nekaj iz Avstralije in Francije, ostale države v naboru pa so le manjšinjsko zastopane. S krogci sem zaradi preglednosti prikazala še glavna mesta najbolj zastopanih držav, to so Washington, Canberra, Pariz in Brasilia. Nekaj problemov sem imela z Rusijo, saj je ta v zemljevidu shranjena kot Russian Federation in sem potrebovala kar nekaj časa, da sem to ugotovila in kasneje spremenila. 
 
 \makebox[\textwidth][c]{
 \includegraphics[height=0.7\textheight]{../slike/moskidelfin_svet.pdf}
@@ -117,8 +116,27 @@ Pri prvem zemljevidu sem med seboj primerjala postavljalce rekordov po državlja
 Pri drugem zemljevidu pa sem med seboj primerjala države gostiteljice, oziroma kje so se prvenstva največkrat odvijala. S kvadratki sem tudi prikazala nekatera od teh mest, to so: Washington, Melbourne, Tokyo, Montreal, Berlin, Rim, Barcelona in Rio de Jainero. 
 
 Ta faza se mi je zdela zanimiva in privlačna, saj je svoje podatke lepo videti prikazane na zemljevidu. Predstavitev z zemljevidi je lepa, čitljiva in bralcu všečna. 
+
+\section{Napredna analiza podatkov}
+
+V četrti fazi sem analizirala postavljanje rekordov v prihodnosti. Ker obravnavam štiri različne sloge; hrbtno, prsno, prosto in delfin, sem se odločila, da naredim analizo le za eno tehniko in sicer delfin, saj so si grafi med seboj podobni. Obstajajo pa odstopanja, namreč na začetku sem želela združiti vse tehnike med seboj, pa se je izkazalo, da pri je bilo npr. pri ženskah v tehniki hrbtno postavljeno veliko rekordov v zadnjem času. Tudi pri kakem drugem grafu se verjetno pojavi taka anomalija. Večinoma pa opazimo, da je tendenca rekordov taka, da je postavljenih rekordov vedno manj, kar je smiselno, saj lahko človeško telo pripeljemo le do neke mere. Opazimo tudi, da so grafi moških rekordov bolj gosti od ženskih, kar pomeni, da moški večkrat podirajo rekorde. Pri vseh grafih je značilno tudi, da v nekaterih obdobjih ni veliko postavljenih rekordov, kar je posledica družbenih razmer, npr. 2. svetovne vojne.
+
+Poglejmo si sedaj analizo grafa za ženske v tehniki delfin. V grafu sta dva večja razkoraka, kjer ni bilo postavljenih rekordov in sicer malo pred letom 1970 in velik razkorak od 1981 do skoraj leta 2000. Zadnja rekorda pa je bil postavljen leta 2012, v Londonu, postavila ga je Dana Vollmer.
+
+Nato sem naredila regresijsko analizo, uporabila pa sem naslednje modele; linearnega, eksponentnega, loess in gam. Večinoma vsi predpostavljajo, da bo čedalje manj rekordov postavljenih v prihodnosti-oz, funkcije limitirajo proti 0, kar je tudi naša logična predpostavka. Vidimo le, da model loess v koncu ohranja pozitivno vrednost. To morda pomeni, da ta model za našo primerjavo ni najboljši. 
+
+Za medsebojno primerjavo modelov sem uporabila metodo najmanjših kvadratov. Primerjava vrne vrednosti: 101.80453445-linearni model, 0.02299152-eksponentni model,  11.06541946-loess model in  3.53098844-gam model. Tako vidimo, da je najboljši eksponentni model, dober pa je tudi model gam.
+
+\makebox[\textwidth][c]{
+\includegraphics[height=0.7\textheight]{../slike/grafzenske.pdf}
+}
+
+Graf za moške, v tehniki delfin je nekoliko gostejši, ima pa tudi nekatere vidne razkorake, kjer ni bilo postavljenega nobenega rekorda. Pri analizi zato pride do bolj zanimivih izračunov-tudi bolj natančnih, kot pri ženskah. Če si podrobneje ogledamo uporabljene 4 modele za analizo, vidimo da tukaj vsi modeli težijo k 0, torej nasprotno kot pri ženskah vsi ustrezajo predpostavki, da bo v prihodnosti vedno manj postavljenih rekordov. Metoda najmanjih kvadratov za primerjavo modelov nam vrne: 72.36911869-linearni model,  0.01993318-eksponentni model,  8.93211158-loess model in 6.04042897-gam model. Vidimo, da se spet izkaže za najboljšega eksponentni model, dobra sta tudi modela gam in loess, loess je malo slabši. 
+
+\makebox[\textwidth][c]{
+\includegraphics[height=0.7\textheight]{../slike/grafmoski.pdf}
+}
+
+\section{Zaključek}
+Ob končanem projektu sem zadovoljna, da sem si z analiziranjem podatkov podala odgovore na vprašanja, ki so me v začetku izbire tematike zanimala, npr. katere države imajo največ rekorderjev, kako se rekordi spreminjajo v času, primerjava po spolu-kdo večkrat postavi rekord(moški, ženske), v katerih državah je bilo postavljenih največ rekordov... Nekatere od teh vprašanj vidimo tudi ob začetku naloge, v ciljih, ko pravzaprav še nisem vedela, kam me bo moja analiza pripeljala. Pri vsaki fazi so se pojavljale tudi težave, kar je razumljivo, saj smo se prvič seznanili z določenimi načini analize podatkov. Predvsem mi je všeč grafična predstava podatkov, ker je za bralca zanimivejša. Dobljeno znanje se mi zdi zelo uporabno za vnaprej, pri splošnih statističnih analizah. 
 \end{document}
-
-% \section{Napredna analiza podatkov}
-
-% \includegraphics{../slike/naselja.pdf}

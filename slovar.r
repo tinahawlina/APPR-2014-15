@@ -9,5 +9,5 @@ slovar <- c("United States" = "Združene države Amerike",
             "France" = "Francija")
 
 prevedi <- function(x) {
-  ifelse(is.na(slovar[x]), x, slovar[x])
+  factor(ifelse(is.na(slovar[x]), x, slovar[x]))
 }

@@ -1,5 +1,6 @@
 # 2. faza: Obdelava, uvoz in čiščenje podatkov
 
+source("slovar.r",encoding="UTF-8")
 source("fontconfig.r",encoding="UTF-8")
 source("uvoz/uvoz.r",encoding="UTF-8")
 source("lib/xml.r", encoding="UTF-8")

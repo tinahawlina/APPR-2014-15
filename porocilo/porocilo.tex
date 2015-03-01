@@ -123,7 +123,7 @@ V četrti fazi sem analizirala postavljanje rekordov v prihodnosti. Ker obravnav
 
 Poglejmo si sedaj analizo grafa za ženske v tehniki delfin. V grafu sta dva večja razkoraka, kjer ni bilo postavljenih rekordov in sicer malo pred letom 1970 in velik razkorak od 1981 do skoraj leta 2000. Zadnja rekorda pa je bil postavljen leta 2012, v Londonu, postavila ga je Dana Vollmer.
 
-Nato sem naredila regresijsko analizo, uporabila pa sem naslednje modele; linearnega, eksponentnega, loess in gam. Večinoma vsi predpostavljajo, da bo čedalje manj rekordov postavljenih v prihodnosti-oz, funkcije limitirajo proti 0, kar je tudi naša logična predpostavka. Vidimo le, da model loess v koncu ohranja pozitivno vrednost. To morda pomeni, da ta model za našo primerjavo ni najboljši. 
+Nato sem naredila regresijsko analizo, uporabila pa sem naslednje modele; linearnega, eksponentnega, loess in gam. Večinoma vsi predpostavljajo, da bo čedalje manj rekordov postavljenih v prihodnosti-oz, funkcije limitirajo proti 0, kar je tudi naša logična predpostavka. Vidimo le, da model loess v koncu ohranja pozitivno vrednost, to je zato, ker model riše le v okviru mojih podatkov.
 
 Za medsebojno primerjavo modelov sem uporabila metodo najmanjših kvadratov. Primerjava vrne vrednosti: 101.80453445-linearni model, 0.02299152-eksponentni model,  11.06541946-loess model in  3.53098844-gam model. Tako vidimo, da je najboljši eksponentni model, dober pa je tudi model gam.
 
@@ -131,7 +131,7 @@ Za medsebojno primerjavo modelov sem uporabila metodo najmanjših kvadratov. Pri
 \includegraphics[height=0.7\textheight]{../slike/grafzenske.pdf}
 }
 
-Graf za moške, v tehniki delfin je nekoliko gostejši, ima pa tudi nekatere vidne razkorake, kjer ni bilo postavljenega nobenega rekorda. Pri analizi zato pride do bolj zanimivih izračunov-tudi bolj natančnih, kot pri ženskah. Če si podrobneje ogledamo uporabljene 4 modele za analizo, vidimo da tukaj vsi modeli težijo k 0, torej nasprotno kot pri ženskah vsi ustrezajo predpostavki, da bo v prihodnosti vedno manj postavljenih rekordov. Metoda najmanjih kvadratov za primerjavo modelov nam vrne: 72.36911869-linearni model,  0.01993318-eksponentni model,  8.93211158-loess model in 6.04042897-gam model. Vidimo, da se spet izkaže za najboljšega eksponentni model, dobra sta tudi modela gam in loess, loess je malo slabši. 
+Graf za moške, v tehniki delfin je nekoliko gostejši, ima pa tudi nekatere vidne razkorake, kjer ni bilo postavljenega nobenega rekorda. Pri analizi zato pride do bolj zanimivih izračunov-tudi bolj natančnih, kot pri ženskah. Če si podrobneje ogledamo uporabljene 4 modele za analizo, vidimo da tukaj vsi modeli težijo k 0, torej vsi ustrezajo predpostavki, da bo v prihodnosti vedno manj postavljenih rekordov. Metoda najmanjih kvadratov za primerjavo modelov nam vrne: 72.36911869-linearni model,  0.01993318-eksponentni model,  8.93211158-loess model in 6.04042897-gam model. Vidimo, da se spet izkaže za najboljšega eksponentni model, dobra sta tudi modela gam in loess, loess je malo slabši. 
 
 \makebox[\textwidth][c]{
 \includegraphics[height=0.7\textheight]{../slike/grafmoski.pdf}

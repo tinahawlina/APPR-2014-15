@@ -121,22 +121,34 @@ Ta faza se mi je zdela zanimiva in privlačna, saj je svoje podatke lepo videti 
 
 V četrti fazi sem analizirala postavljanje rekordov v prihodnosti. Ker obravnavam štiri različne sloge; hrbtno, prsno, prosto in delfin, sem se odločila, da naredim analizo le za eno tehniko in sicer delfin, saj so si grafi med seboj podobni. Obstajajo pa odstopanja, namreč na začetku sem želela združiti vse tehnike med seboj, pa se je izkazalo, da pri je bilo npr. pri ženskah v tehniki hrbtno postavljeno veliko rekordov v zadnjem času. Tudi pri kakem drugem grafu se verjetno pojavi taka anomalija. Večinoma pa opazimo, da je tendenca rekordov taka, da je postavljenih rekordov vedno manj, kar je smiselno, saj lahko človeško telo pripeljemo le do neke mere. Opazimo tudi, da so grafi moških rekordov bolj gosti od ženskih, kar pomeni, da moški večkrat podirajo rekorde. Pri vseh grafih je značilno tudi, da v nekaterih obdobjih ni veliko postavljenih rekordov, kar je posledica družbenih razmer, npr. 2. svetovne vojne.
 
-Poglejmo si sedaj analizo grafa za ženske v tehniki delfin. V grafu sta dva večja razkoraka, kjer ni bilo postavljenih rekordov in sicer malo pred letom 1970 in velik razkorak od 1981 do skoraj leta 2000. Zadnja rekorda pa je bil postavljen leta 2012, v Londonu, postavila ga je Dana Vollmer.
+Poglejmo si sedaj analizo grafa za ženske v tehniki delfin. V grafu sta dva večja razkoraka, kjer ni bilo postavljenih rekordov in sicer malo pred letom 1970 in velik razkorak od 1981 do skoraj leta 2000. Zadnji rekord pa je bil postavljen leta 2012, v Londonu, postavila ga je Dana Vollmer.
 
-Nato sem naredila regresijsko analizo, uporabila pa sem naslednje modele; linearnega, eksponentnega, loess in gam. Večinoma vsi predpostavljajo, da bo čedalje manj rekordov postavljenih v prihodnosti-oz, funkcije limitirajo proti 0, kar je tudi naša logična predpostavka. Vidimo le, da model loess v koncu ohranja pozitivno vrednost, to je zato, ker model riše le v okviru mojih podatkov.
+Nato sem naredila regresijsko analizo, uporabila pa sem naslednje modele; linearnega in eksponentnega. Modela loess in gam nista ustrezala podatkom (njuni funkciji sta bili večkrat naraščajoči), zato sem ju odstranila. Oba modela predpostavljata, da bo čedalje manj rekordov postavljenih v prihodnosti-oz., funkciji limitirata proti 0, kar je tudi naša logična predpostavka. Pri samem lm modelu pa sem uporabila naslednji enačbi:
 
-Za medsebojno primerjavo modelov sem uporabila metodo najmanjših kvadratov. Primerjava vrne vrednosti: 101.80453445-linearni model, 0.02299152-eksponentni model,  11.06541946-loess model in  3.53098844-gam model. Tako vidimo, da je najboljši eksponentni model, dober pa je tudi model gam.
+\begin{itemize}
+\item{\verb|lm(cas.z ~ datt.z)| (linearen model, čas je linearno odvisen od datuma),}
+\item{\verb|lm(logcas.z ~ datt.z)| (eksponentni model, logaritem časa je linearno odvisen od datuma),}
+\end{itemize}
+
+Za medsebojno primerjavo modelov sem uporabila metodo najmanjših kvadratov. Primerjava vrne vrednosti: 101.80453445-linearni model in 0.02299152-eksponentni model. Tako vidimo, da je eksponentni model dosti boljši od linearnega.
 
 \makebox[\textwidth][c]{
 \includegraphics[height=0.7\textheight]{../slike/grafzenske.pdf}
 }
 
-Graf za moške, v tehniki delfin je nekoliko gostejši, ima pa tudi nekatere vidne razkorake, kjer ni bilo postavljenega nobenega rekorda. Pri analizi zato pride do bolj zanimivih izračunov-tudi bolj natančnih, kot pri ženskah. Če si podrobneje ogledamo uporabljene 4 modele za analizo, vidimo da tukaj vsi modeli težijo k 0, torej vsi ustrezajo predpostavki, da bo v prihodnosti vedno manj postavljenih rekordov. Metoda najmanjih kvadratov za primerjavo modelov nam vrne: 72.36911869-linearni model,  0.01993318-eksponentni model,  8.93211158-loess model in 6.04042897-gam model. Vidimo, da se spet izkaže za najboljšega eksponentni model, dobra sta tudi modela gam in loess, loess je malo slabši. 
+Graf za moške, v tehniki delfin je nekoliko gostejši, ima pa tudi nekatere vidne razkorake, kjer ni bilo postavljenega nobenega rekorda. Pri analizi zato pride do bolj zanimivih izračunov-tudi bolj natančnih, kot pri ženskah. Če si podrobneje ogledamo uporabljene tri modele za analizo, vidimo da tukaj vsi modeli težijo k 0, torej vsi ustrezajo predpostavki, da bo v prihodnosti vedno manj postavljenih rekordov. Pri ocenjevanju z lm modelom sem uporabila enaki enačbi, kot pri grafu za ženske:
+
+\begin{itemize}
+\item{\verb|lm(lm(cas.m ~ dat2.m))| (linearen model, čas je linearno odvisen od datuma),}
+\item{\verb|lm(logcas.m ~ dat2.m)| (eksponentni model, logaritem časa je linearno odvisen od datuma),}
+\end{itemize}
+
+Metoda najmanjih kvadratov za primerjavo modelov nam vrne: 72.36911869-linearni model, 0.01993318-eksponentni model, 8.93211158-loess model. Vidimo, da se spet izkaže za najboljšega eksponentni model.
 
 \makebox[\textwidth][c]{
 \includegraphics[height=0.7\textheight]{../slike/grafmoski.pdf}
 }
 
 \section{Zaključek}
-Ob končanem projektu sem zadovoljna, da sem si z analiziranjem podatkov podala odgovore na vprašanja, ki so me v začetku izbire tematike zanimala, npr. katere države imajo največ rekorderjev, kako se rekordi spreminjajo v času, primerjava po spolu-kdo večkrat postavi rekord(moški, ženske), v katerih državah je bilo postavljenih največ rekordov... Nekatere od teh vprašanj vidimo tudi ob začetku naloge, v ciljih, ko pravzaprav še nisem vedela, kam me bo moja analiza pripeljala. Pri vsaki fazi so se pojavljale tudi težave, kar je razumljivo, saj smo se prvič seznanili z določenimi načini analize podatkov. Predvsem mi je všeč grafična predstava podatkov, ker je za bralca zanimivejša. Dobljeno znanje se mi zdi zelo uporabno za vnaprej, pri splošnih statističnih analizah. 
+Ob končanem projektu sem zadovoljna, da sem si z analiziranjem podatkov podala odgovore na vprašanja, ki so me v začetku izbire tematike zanimala, npr. katere države imajo največ rekorderjev, kako se rekordi spreminjajo v času, primerjava po spolu-kdo večkrat postavi rekord(moški, ženske), v katerih državah je bilo postavljenih največ rekordov itd. Nekatere od teh vprašanj vidimo tudi ob začetku naloge, v ciljih, ko pravzaprav še nisem vedela, kam me bo moja analiza pripeljala. Pri vsaki fazi so se pojavljale tudi težave, kar je razumljivo, saj smo se prvič seznanili z določenimi načini analize podatkov. Predvsem mi je všeč grafična predstava podatkov, ker je za bralca zanimivejša. Dobljeno znanje se mi zdi zelo uporabno za vnaprej, pri splošnih statističnih analizah. 
 \end{document}

@@ -50,27 +50,12 @@ lines(datumi.z.napoved,
       exp(predict(llin.z, data.frame(datt.z=as.numeric(datumi.z.napoved-zacetek.z)))),
       col = "blue")
 
-
-#Loess metoda
-loes.z <- loess(cas.z ~ datt.z)
-lines(datumi.z.napoved,
-      predict(loes.z, data.frame(datt.z=as.numeric(datumi.z.napoved-zacetek.z))),
-      col = "red")
-
-#Gam metoda
-library(mgcv)
-mgam.z <- gam(cas.z ~ s(datt.z))
-lines(datumi.z.napoved,
-      predict(mgam.z, data.frame(datt.z=as.numeric(datumi.z.napoved-zacetek.z))), 
-      col = "green")
-
-
 legend("topright", c("Linearna metoda", 
-                     "Eksponentna metoda", "Loess", "Gam"),lty=c(1,1,1),
-       col = c("yellow", "blue", "red", "green"))
+                     "Eksponentna metoda"),lty=c(1,1,1),
+       col = c("yellow", "blue"))
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
-vsotakvadratov.z <- sapply(list(linearna.z, llin.z, loes.z, mgam.z), function(x) sum(x$residuals^2))
+vsotakvadratov.z <- sapply(list(linearna.z, llin.z), function(x) sum(x$residuals^2))
 # 101.80453445   0.02299152  11.06541946   3.53098844
 
 dev.off()
@@ -115,19 +100,12 @@ lines(datumi.m.napoved,
       predict(loes.m, data.frame(dat2.m=as.numeric(datumi.m.napoved-zacetek.m))),
       col = "red")
 
-#Gam metoda
-library(mgcv)
-mgam.m <- gam(cas.m ~ s(dat2.m))
-lines(datumi.m.napoved,
-      predict(mgam.m, data.frame(dat2.m=as.numeric(datumi.m.napoved-zacetek.m))), 
-      col = "green")
-
 
 legend("topright", c("Linearna metoda", 
-                     "Eksponentna metoda", "Loess", "Gam"),lty=c(1,1,1),
-       col = c("yellow", "blue", "red", "green"))
+                     "Eksponentna metoda", "Loess"),lty=c(1,1,1),
+       col = c("yellow", "blue", "red"))
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
-vsotakvadratov.m <- sapply(list(linearna.m, llin.m, loes.m, mgam.m), function(x) sum(x$residuals^2))
-# 72.36911869  0.01993318  8.93211158  6.04042897
+vsotakvadratov.m <- sapply(list(linearna.m, llin.m, loes.m), function(x) sum(x$residuals^2))
+# 72.36911869  0.01993318  8.93211158  
 dev.off()
